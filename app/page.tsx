@@ -214,7 +214,11 @@ export default function Dashboard() {
         {/* Main Dashboard Tabs */}
         <Tabs defaultValue="live-feed" className="space-y-6">
           <TabsList className="grid w-full grid-cols-5">
-            
+            <TabsTrigger value="live-feed">Live Feed</TabsTrigger>
+            <TabsTrigger value="alerts">Alerts</TabsTrigger>
+            <TabsTrigger value="incidents">Incidents</TabsTrigger>
+            <TabsTrigger value="analytics">Analytics</TabsTrigger>
+            <TabsTrigger value="system">System</TabsTrigger>
           </TabsList>
 
           <TabsContent value="live-feed">
