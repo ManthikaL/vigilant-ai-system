@@ -169,7 +169,7 @@ export default function Dashboard() {
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium"></CardTitle>
+              <CardTitle className="text-sm font-medium">System Uptime</CardTitle>
               <Activity className="h-4 w-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
@@ -187,26 +187,7 @@ export default function Dashboard() {
               Active Threats ({activeIncidents.length})
             </h2>
             <div className="space-y-3">
-              {activeIncidents.map((incident) => (
-                <Alert key={incident.id} className="border-l-4 border-l-red-500">
-                  <AlertTriangle className="h-4 w-4" />
-                  <AlertDescription>
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <span className="font-medium">{incident.type}</span> - {incident.description}
-                        <div className="text-sm text-muted-foreground mt-1">
-                          <MapPin className="h-3 w-3 inline mr-1" />
-                          {incident.location} • {incident.timestamp.toLocaleTimeString()}
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <Badge className={getSeverityColor(incident.severity)}>{incident.severity.toUpperCase()}</Badge>
-                        <Badge variant="outline">{Math.round(incident.confidence * 100)}% confidence</Badge>
-                      </div>
-                    </div>
-                  </AlertDescription>
-                </Alert>
-              ))}
+              
             </div>
           </div>
         )}
