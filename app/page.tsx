@@ -163,7 +163,7 @@ export default function Dashboard() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-red-600">{activeIncidents.length}</div>
-              <p className="text-xs text-muted-foreground">Requires attention</p>
+              <p className="text-xs text-muted-foreground"></p>
             </CardContent>
           </Card>
 
