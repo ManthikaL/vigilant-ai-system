@@ -178,17 +178,7 @@ export default function Dashboard() {
             </CardContent>
           </Card>
         </div>
-
-        {/* Active Alerts */}
-        {activeIncidents.length > 0 && (
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold mb-4 flex items-center">
-              <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
-              Active Threats ({activeIncidents.length})
-            </h2>
-            <div className="space-y-3">
-              {activeIncidents.map((incident) => (
-                <Alert key={incident.id} className="border-l-4 border-l-red-500">
+        <Alert key={incident.id} className="border-l-4 border-l-red-500">
                   <AlertTriangle className="h-4 w-4" />
                   <AlertDescription>
                     <div className="flex items-center justify-between">
@@ -206,6 +196,17 @@ export default function Dashboard() {
                     </div>
                   </AlertDescription>
                 </Alert>
+
+        {/* Active Alerts */}
+        {activeIncidents.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold mb-4 flex items-center">
+              <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
+              Active Threats ({activeIncidents.length})
+            </h2>
+            <div className="space-y-3">
+              {activeIncidents.map((incident) => (
+                
               ))}
             </div>
           </div>
