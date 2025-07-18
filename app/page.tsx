@@ -178,7 +178,17 @@ export default function Dashboard() {
             </CardContent>
           </Card>
         </div>
-        <Alert key={incident.id} className="border-l-4 border-l-red-500">
+
+        {/* Active Alerts */}
+        {activeIncidents.length > 0 && (
+          <div className="mb-8">
+            <h2 className="text-lg font-semibold mb-4 flex items-center">
+              <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
+              Active Threats ({activeIncidents.length})
+            </h2>
+            <div className="space-y-3">
+              {activeIncidents.map((incident) => (
+                <Alert key={incident.id} className="border-l-4 border-l-red-500">
                   <AlertTriangle className="h-4 w-4" />
                   <AlertDescription>
                     <div className="flex items-center justify-between">
@@ -196,17 +206,6 @@ export default function Dashboard() {
                     </div>
                   </AlertDescription>
                 </Alert>
-
-        {/* Active Alerts */}
-        {activeIncidents.length > 0 && (
-          <div className="mb-8">
-            <h2 className="text-lg font-semibold mb-4 flex items-center">
-              <AlertTriangle className="h-5 w-5 text-red-500 mr-2" />
-              Active Threats ({activeIncidents.length})
-            </h2>
-            <div className="space-y-3">
-              {activeIncidents.map((incident) => (
-                
               ))}
             </div>
           </div>
@@ -215,11 +214,7 @@ export default function Dashboard() {
         {/* Main Dashboard Tabs */}
         <Tabs defaultValue="live-feed" className="space-y-6">
           <TabsList className="grid w-full grid-cols-5">
-            <TabsTrigger value="live-feed">Live Feed</TabsTrigger>
-            <TabsTrigger value="alerts">Alerts</TabsTrigger>
-            <TabsTrigger value="incidents">Incidents</TabsTrigger>
-            <TabsTrigger value="analytics">Analytics</TabsTrigger>
-            <TabsTrigger value="system">System</TabsTrigger>
+            
           </TabsList>
 
           <TabsContent value="live-feed">
